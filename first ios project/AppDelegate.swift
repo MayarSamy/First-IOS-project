@@ -16,22 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        if let isLoggedIn = UserDefaults.standard.object(forKey: "isLoggedIn") as? Bool
-        {
-            if isLoggedIn
-            {
-                let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
-                self.window?.rootViewController = UINavigationController(rootViewController: profileVC)
+        let userData = UserDefaults.standard.object(forKey: "user" )
+        let isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn" )
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if userData != nil {
+            if isLogged {
+                let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "MoviesVC") as! MoviesVC
+                let navigationController = UINavigationController(rootViewController: rootVC)
+                window?.rootViewController = navigationController
+            } else {
+                let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                let navigationController = UINavigationController(rootViewController: rootVC)
+                window?.rootViewController = navigationController
             }
-            else
-            {
-                let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-                self.window?.rootViewController = UINavigationController(rootViewController: loginVC)
-                
-            }
-            
         }
-
+        
         return true
     }
 

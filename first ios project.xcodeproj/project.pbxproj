@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		8103476C24DF31790070EF47 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103476B24DF31790070EF47 /* MapVC.swift */; };
 		8103476E24E0DF980070EF47 /* map pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103476D24E0DF970070EF47 /* map pin.png */; };
+		81151F3324F6EDF900851F1D /* MoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81151F3224F6EDF900851F1D /* MoviesVC.swift */; };
+		81151F3624F77F9200851F1D /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81151F3424F77F9200851F1D /* MovieCell.swift */; };
+		81151F3724F77F9200851F1D /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81151F3524F77F9200851F1D /* MovieCell.xib */; };
+		81151F3924F7846600851F1D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81151F3824F7846600851F1D /* Movie.swift */; };
+		81151F4024F78AB900851F1D /* spy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F3A24F78AB800851F1D /* spy.jpg */; };
+		81151F4124F78AB900851F1D /* true story.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F3B24F78AB800851F1D /* true story.jpg */; };
+		81151F4224F78AB900851F1D /* joker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F3C24F78AB800851F1D /* joker.jpg */; };
+		81151F4324F78AB900851F1D /* assassins creed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F3D24F78AB900851F1D /* assassins creed.jpg */; };
+		81151F4424F78AB900851F1D /* x-men.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F3E24F78AB900851F1D /* x-men.jpg */; };
+		81151F4524F78AB900851F1D /* TheNun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F3F24F78AB900851F1D /* TheNun.jpg */; };
+		81151F4724F78CC400851F1D /* fantastic beasts.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F4624F78CC400851F1D /* fantastic beasts.jpeg */; };
+		81151F4924F7914D00851F1D /* Us.png in Resources */ = {isa = PBXBuildFile; fileRef = 81151F4824F7914D00851F1D /* Us.png */; };
+		81151F4B24F792C100851F1D /* Kong Skull Island.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F4A24F792C100851F1D /* Kong Skull Island.jpg */; };
+		81151F4D24F793A200851F1D /* Jigsaw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81151F4C24F793A200851F1D /* Jigsaw.jpg */; };
 		8133A03624CF5A0600AC2F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133A03524CF5A0600AC2F27 /* AppDelegate.swift */; };
 		8133A03B24CF5A0600AC2F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8133A03924CF5A0600AC2F27 /* Main.storyboard */; };
 		8133A03D24CF5A1600AC2F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8133A03C24CF5A1600AC2F27 /* Assets.xcassets */; };
@@ -43,6 +57,20 @@
 /* Begin PBXFileReference section */
 		8103476B24DF31790070EF47 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		8103476D24E0DF970070EF47 /* map pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map pin.png"; sourceTree = "<group>"; };
+		81151F3224F6EDF900851F1D /* MoviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVC.swift; sourceTree = "<group>"; };
+		81151F3424F77F9200851F1D /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		81151F3524F77F9200851F1D /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		81151F3824F7846600851F1D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		81151F3A24F78AB800851F1D /* spy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spy.jpg; sourceTree = "<group>"; };
+		81151F3B24F78AB800851F1D /* true story.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "true story.jpg"; sourceTree = "<group>"; };
+		81151F3C24F78AB800851F1D /* joker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joker.jpg; sourceTree = "<group>"; };
+		81151F3D24F78AB900851F1D /* assassins creed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "assassins creed.jpg"; sourceTree = "<group>"; };
+		81151F3E24F78AB900851F1D /* x-men.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "x-men.jpg"; sourceTree = "<group>"; };
+		81151F3F24F78AB900851F1D /* TheNun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TheNun.jpg; sourceTree = "<group>"; };
+		81151F4624F78CC400851F1D /* fantastic beasts.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fantastic beasts.jpeg"; sourceTree = "<group>"; };
+		81151F4824F7914D00851F1D /* Us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Us.png; sourceTree = "<group>"; };
+		81151F4A24F792C100851F1D /* Kong Skull Island.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kong Skull Island.jpg"; sourceTree = "<group>"; };
+		81151F4C24F793A200851F1D /* Jigsaw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jigsaw.jpg; sourceTree = "<group>"; };
 		8133A03224CF5A0600AC2F27 /* first ios project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "first ios project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8133A03524CF5A0600AC2F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8133A03A24CF5A0600AC2F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,55 +116,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8103471824DE642D0070EF47 /* extentions */ = {
+		8103471824DE642D0070EF47 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = extentions;
+			path = Extentions;
 			sourceTree = "<group>";
 		};
-		8103471924DE64350070EF47 /* views */ = {
+		8103471924DE64350070EF47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				8133A03924CF5A0600AC2F27 /* Main.storyboard */,
+				8133A03E24CF5A1600AC2F27 /* LaunchScreen.storyboard */,
+				81151F3424F77F9200851F1D /* MovieCell.swift */,
+				81151F3524F77F9200851F1D /* MovieCell.xib */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		8103471A24DE64380070EF47 /* assets */ = {
+		8103471A24DE64380070EF47 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				8133A03C24CF5A1600AC2F27 /* Assets.xcassets */,
+				81151F4C24F793A200851F1D /* Jigsaw.jpg */,
+				81151F4A24F792C100851F1D /* Kong Skull Island.jpg */,
+				81151F4824F7914D00851F1D /* Us.png */,
+				81151F4624F78CC400851F1D /* fantastic beasts.jpeg */,
+				81151F3D24F78AB900851F1D /* assassins creed.jpg */,
+				81151F3C24F78AB800851F1D /* joker.jpg */,
+				81151F3A24F78AB800851F1D /* spy.jpg */,
+				81151F3F24F78AB900851F1D /* TheNun.jpg */,
+				81151F3B24F78AB800851F1D /* true story.jpg */,
+				81151F3E24F78AB900851F1D /* x-men.jpg */,
 				81B75F2124E6AAED00A8E056 /* profile placeholder.png */,
 				8103476D24E0DF970070EF47 /* map pin.png */,
 			);
-			name = assets;
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		8103471B24DE64510070EF47 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				8133A06924DB8EA600AC2F27 /* User.swift */,
+				81151F3824F7846600851F1D /* Movie.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		8103471D24DE666D0070EF47 /* constants */ = {
+		8103471D24DE666D0070EF47 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = constants;
+			name = Constants;
 			sourceTree = "<group>";
 		};
-		8103471E24DE66720070EF47 /* viswControlles */ = {
+		8103471E24DE66720070EF47 /* Controlles */ = {
 			isa = PBXGroup;
 			children = (
 				8103476B24DF31790070EF47 /* MapVC.swift */,
 				8133A06724CFAE7900AC2F27 /* ProfileVC.swift */,
+				81151F3224F6EDF900851F1D /* MoviesVC.swift */,
 				8133A06524CFAE2500AC2F27 /* LoginVC.swift */,
 				8133A06324CF9DCD00AC2F27 /* SignUpVC.swift */,
 			);
-			path = viswControlles;
+			path = Controlles;
 			sourceTree = "<group>";
 		};
 		8133A02924CF5A0500AC2F27 = {
@@ -162,15 +205,14 @@
 		8133A03424CF5A0600AC2F27 /* first ios project */ = {
 			isa = PBXGroup;
 			children = (
-				81B75F2524E6B06700A8E056 /* manager */,
-				8103471D24DE666D0070EF47 /* constants */,
-				8103471E24DE66720070EF47 /* viswControlles */,
-				8103471824DE642D0070EF47 /* extentions */,
-				8103471924DE64350070EF47 /* views */,
-				8103471A24DE64380070EF47 /* assets */,
-				8103471B24DE64510070EF47 /* model */,
 				8133A03524CF5A0600AC2F27 /* AppDelegate.swift */,
-				8133A03E24CF5A1600AC2F27 /* LaunchScreen.storyboard */,
+				8103471B24DE64510070EF47 /* model */,
+				8103471924DE64350070EF47 /* Views */,
+				8103471E24DE66720070EF47 /* Controlles */,
+				81B75F2524E6B06700A8E056 /* Managers */,
+				8103471D24DE666D0070EF47 /* Constants */,
+				8103471824DE642D0070EF47 /* Extentions */,
+				8103471A24DE64380070EF47 /* Assets */,
 				8133A04124CF5A1600AC2F27 /* Info.plist */,
 			);
 			path = "first ios project";
@@ -195,12 +237,12 @@
 			path = "first ios projectUITests";
 			sourceTree = "<group>";
 		};
-		81B75F2524E6B06700A8E056 /* manager */ = {
+		81B75F2524E6B06700A8E056 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				81B75F1E24E6A5EE00A8E056 /* UserDefaultManager.swift */,
 			);
-			path = manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +349,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81151F3724F77F9200851F1D /* MovieCell.xib in Resources */,
+				81151F4424F78AB900851F1D /* x-men.jpg in Resources */,
+				81151F4024F78AB900851F1D /* spy.jpg in Resources */,
+				81151F4524F78AB900851F1D /* TheNun.jpg in Resources */,
+				81151F4724F78CC400851F1D /* fantastic beasts.jpeg in Resources */,
 				81B75F2324E6AAEE00A8E056 /* profile placeholder.png in Resources */,
 				8133A04024CF5A1600AC2F27 /* LaunchScreen.storyboard in Resources */,
+				81151F4B24F792C100851F1D /* Kong Skull Island.jpg in Resources */,
 				8133A03D24CF5A1600AC2F27 /* Assets.xcassets in Resources */,
 				8133A03B24CF5A0600AC2F27 /* Main.storyboard in Resources */,
+				81151F4924F7914D00851F1D /* Us.png in Resources */,
+				81151F4224F78AB900851F1D /* joker.jpg in Resources */,
+				81151F4124F78AB900851F1D /* true story.jpg in Resources */,
 				8103476E24E0DF980070EF47 /* map pin.png in Resources */,
+				81151F4D24F793A200851F1D /* Jigsaw.jpg in Resources */,
+				81151F4324F78AB900851F1D /* assassins creed.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +391,12 @@
 			files = (
 				8133A06824CFAE7900AC2F27 /* ProfileVC.swift in Sources */,
 				8103476C24DF31790070EF47 /* MapVC.swift in Sources */,
+				81151F3624F77F9200851F1D /* MovieCell.swift in Sources */,
 				8133A06424CF9DCD00AC2F27 /* SignUpVC.swift in Sources */,
+				81151F3924F7846600851F1D /* Movie.swift in Sources */,
 				8133A03624CF5A0600AC2F27 /* AppDelegate.swift in Sources */,
 				8133A06A24DB8EA600AC2F27 /* User.swift in Sources */,
+				81151F3324F6EDF900851F1D /* MoviesVC.swift in Sources */,
 				8133A06624CFAE2500AC2F27 /* LoginVC.swift in Sources */,
 				81B75F1F24E6A5EE00A8E056 /* UserDefaultManager.swift in Sources */,
 			);
