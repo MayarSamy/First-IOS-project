@@ -11,14 +11,24 @@ import UIKit
 class SignUpVC: UIViewController {
     
     // MARK: - outlet
+  //  @IBOutlet weak var userNameTextField: UITextField!
+   // @IBOutlet weak var emailTextField: UITextField!
+  //  @IBOutlet weak var phoneNumberTextField: UITextField!
+   // @IBOutlet weak var addressTextField: UITextField!
+   // @IBOutlet weak var passwordTextField: UITextField!
+   // @IBOutlet weak var rePasswordTextField: UITextField!
+    //@IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var addressTextField: UITextField!
     // MARK: -  variabels
     var user : User!
     var gender = Gender.female
@@ -34,23 +44,48 @@ class SignUpVC: UIViewController {
         super.viewDidLoad()
         imagePicker.delegate = self
     }
+  
+    
+    //image choosing
+    @IBAction func imagePickerBtnTapped(_ sender: UIButton) {
+        present(imagePicker, animated: true)
+    }
+    
+    //address 
+    @IBAction func addressBtnTapped(_ sender: UIButton) {
+                let MapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapVC") as! MapVC
+                    MapVC.delegate = self
+                navigationController?.pushViewController(MapVC, animated: true)
+    }
+    
+    //gender switch
+    
+    @IBAction func genderSwitchChanged(_ sender: UISwitch) {
+        if sender.isOn {
+            gender = .female
+        } else {
+            gender = .male
+        }
+    }
     
     // MARK: - rigester
     @IBAction func registerBtnTapped(_ sender: UIButton) {
+        
         if (dataEntered())
         {
             if(isValidData()) {
                 user = User(image: CodableImage(withImage: imageView.image!), name: userNameTextField.text, email: emailTextField.text, phone: phoneNumberTextField.text, address: addressTextField.text, password: passwordTextField.text, gender: gender)
-
-            //setUserDefaults(user: user)
-            UserDefaultManager.shared().user = user
-            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-            navigationController?.pushViewController(loginVC, animated: true)
+                
+                //setUserDefaults(user: user)
+                UserDefaultManager.shared().user = user
+                let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+                navigationController?.pushViewController(loginVC, animated: true)
             }
         }
     }
+   
     
-    //checking dta entered
+    //checking data entered
     private func dataEntered() -> Bool {
         
         // MARK: - checking user name entered
@@ -85,7 +120,7 @@ class SignUpVC: UIViewController {
             let alert = UIAlertController(title: "ERROR", message: "Enter your address", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
+         
             return false
         }
         
@@ -156,28 +191,6 @@ class SignUpVC: UIViewController {
         return passwordPred.evaluate(with: password)
     }
     
-    
-    // MARK: - gender switch
-    @IBAction func genderSwitchChanged(_ sender: UISwitch) {
-        if sender.isOn {
-            gender = .female
-        } else {
-            gender = .male
-        }
-    }
-    
-    //MARK: - image
-    @IBAction func imagePickerBtnTapped(_ sender: UIButton) {
-        print("clicked")
-        present(imagePicker, animated: true)
-    }
-    
-    //MARK: - address
-    @IBAction func addressBtnTapped(_ sender: UIButton) {
-        let MapVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapVC") as! MapVC
-        MapVC.delegate = self
-        navigationController?.pushViewController(MapVC, animated: true)
-    }
     
     //set user default
 //    func setUserDefaults(user: User) {

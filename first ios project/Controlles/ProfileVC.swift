@@ -23,8 +23,6 @@ class ProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Hide the Navigation Bar
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         //title
         self.navigationItem.title = "Profile"
     }
