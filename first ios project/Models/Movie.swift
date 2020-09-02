@@ -12,7 +12,7 @@ struct Movies: Decodable {
     
     var image : String
     var title : String
-    var genre : String
+    var genre : [String]
     var releaseYear : Int
     var rating : Double
 }

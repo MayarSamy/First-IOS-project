@@ -63,6 +63,8 @@ class MoviesVC: UIViewController {
         } else if let movies = movies {
             //print(movies.first?.title)
             self.moviesArray = movies
+            self.moviesTable.reloadData()
+
         }
     }
     }
@@ -95,10 +97,11 @@ extension MoviesVC : UITableViewDataSource, UITableViewDelegate
         let image = UIImage(named: moviesArray[indexPath.row].image)
         cell.movieImage.image = image
         cell.movieNameLbl.text = moviesArray[indexPath.row].title
-        //cell.movieTypeLbl.text = moviesArray[indexPath.row].genre
-        cell.movieTypeLbl.text = String(moviesArray[indexPath.row].rating)
+        cell.movieTypeLbl.text = moviesArray[indexPath.row].genre[0]
+        //cell.mov.text = String(moviesArray[indexPath.row].rating)
 
         cell.moviesReleasedLbl.text = String(moviesArray[indexPath.row].releaseYear)
+        cell.movieRatingLbl.text = String(moviesArray[indexPath.row].rating)
         return cell
     }
     
