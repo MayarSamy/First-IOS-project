@@ -14,5 +14,6 @@ target 'first ios project' do
 
   pod 'IQKeyboardManagerSwift'
 
+  pod 'Alamofire', '~> 4.9.1'
 
 end

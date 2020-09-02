@@ -15,7 +15,7 @@ class MoviesVC: UIViewController {
     @IBOutlet weak var moviesTable: UITableView!
     
     //variables
-    var moviesArray : [Movie] = []
+    var moviesArray : [Movies] = []
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,19 +43,28 @@ class MoviesVC: UIViewController {
         
     }
     
-    private func getData() {
-        let movie1 = Movie(image: "true story" , name: "True Story", type: "Mystery", releaseDate: "2015")
-        let movie2 = Movie(image: "spy", name: "Spy", type: "Action comedy", releaseDate: "2015")
-        let movie3 = Movie(image: "assassins creed", name: "Assassin's Creed", type: "Science fiction action", releaseDate: "2016")
-        let movie4 = Movie(image: "x-men", name: "X-Men: Apocalypse ", type: "Superhero", releaseDate: "2016")
-        let movie5 = Movie(image: "Kong Skull Island", name: "Kong: Skull Island", type: "Monster", releaseDate: "2017")
-        let movie6 = Movie(image: "Jigsaw", name: "Jigsaw", type: "Horror", releaseDate: "2017")
-        let movie7 = Movie(image: "TheNun", name: "The Nun", type: "Horror", releaseDate: "2018")
-        let movie8 = Movie(image: "fantastic beasts", name: "Fantastic Beasts: The Crimes of Grindelwald", type: "Fantasy", releaseDate: "2018")
-        let movie9 = Movie(image: "joker", name: "Joker", type: "Psychological thriller", releaseDate: "2019")
-        let movie10 = Movie(image: "Us", name: "Us", type: "Horror", releaseDate: "2019")
-        
-        moviesArray.append(contentsOf: [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10])
+   private func getData() {
+//        let movie1 = Movie(image: "true story" , name: "True Story", type: "Mystery", releaseDate: "2015")
+//        let movie2 = Movie(image: "spy", name: "Spy", type: "Action comedy", releaseDate: "2015")
+//        let movie3 = Movie(image: "assassins creed", name: "Assassin's Creed", type: "Science fiction action", releaseDate: "2016")
+//        let movie4 = Movie(image: "x-men", name: "X-Men: Apocalypse ", type: "Superhero", releaseDate: "2016")
+//        let movie5 = Movie(image: "Kong Skull Island", name: "Kong: Skull Island", type: "Monster", releaseDate: "2017")
+//        let movie6 = Movie(image: "Jigsaw", name: "Jigsaw", type: "Horror", releaseDate: "2017")
+//        let movie7 = Movie(image: "TheNun", name: "The Nun", type: "Horror", releaseDate: "2018")
+//        let movie8 = Movie(image: "fantastic beasts", name: "Fantastic Beasts: The Crimes of Grindelwald", type: "Fantasy", releaseDate: "2018")
+//        let movie9 = Movie(image: "joker", name: "Joker", type: "Psychological thriller", releaseDate: "2019")
+//        let movie10 = Movie(image: "Us", name: "Us", type: "Horror", releaseDate: "2019")
+//
+//        moviesArray.append(contentsOf: [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10])
+   
+    APIManager.loadMovies{ (error, movies) in
+        if let error = error {
+            print(error)
+        } else if let movies = movies {
+            //print(movies.first?.title)
+            self.moviesArray = movies
+        }
+    }
     }
     
     @objc
@@ -85,9 +94,11 @@ extension MoviesVC : UITableViewDataSource, UITableViewDelegate
         
         let image = UIImage(named: moviesArray[indexPath.row].image)
         cell.movieImage.image = image
-        cell.movieNameLbl.text = moviesArray[indexPath.row].name
-        cell.movieTypeLbl.text = moviesArray[indexPath.row].type
-        cell.moviesReleasedLbl.text = moviesArray[indexPath.row].releaseDate
+        cell.movieNameLbl.text = moviesArray[indexPath.row].title
+        //cell.movieTypeLbl.text = moviesArray[indexPath.row].genre
+        cell.movieTypeLbl.text = String(moviesArray[indexPath.row].rating)
+
+        cell.moviesReleasedLbl.text = String(moviesArray[indexPath.row].releaseYear)
         return cell
     }
     

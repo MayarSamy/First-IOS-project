@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,6 +34,7 @@
 		8133A06624CFAE2500AC2F27 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133A06524CFAE2500AC2F27 /* LoginVC.swift */; };
 		8133A06824CFAE7900AC2F27 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133A06724CFAE7900AC2F27 /* ProfileVC.swift */; };
 		8133A06A24DB8EA600AC2F27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8133A06924DB8EA600AC2F27 /* User.swift */; };
+		81A0856324FFDBC80086F85C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A0856224FFDBC80086F85C /* APIManager.swift */; };
 		81B75F1F24E6A5EE00A8E056 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B75F1E24E6A5EE00A8E056 /* UserDefaultManager.swift */; };
 		81B75F2324E6AAEE00A8E056 /* profile placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 81B75F2124E6AAED00A8E056 /* profile placeholder.png */; };
 		D0F52219A83C819D7D86B659 /* Pods_first_ios_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6CE8A82155CEE9559A5BE9 /* Pods_first_ios_project.framework */; };
@@ -93,6 +94,7 @@
 		8133A06524CFAE2500AC2F27 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		8133A06724CFAE7900AC2F27 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		8133A06924DB8EA600AC2F27 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		81A0856224FFDBC80086F85C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		81B75F1E24E6A5EE00A8E056 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		81B75F2124E6AAED00A8E056 /* profile placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile placeholder.png"; sourceTree = "<group>"; };
 		9DFEE23A675A24D5363B92FC /* Pods_first_ios_projectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_first_ios_projectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +136,6 @@
 				4DDACF320DF78B089E36BDAA /* Pods-first ios projectTests.debug.xcconfig */,
 				DEE35C6D5EFAD773CC4BA5AB /* Pods-first ios projectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -185,20 +186,20 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		8103471B24DE64510070EF47 /* model */ = {
+		8103471B24DE64510070EF47 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				8133A06924DB8EA600AC2F27 /* User.swift */,
 				81151F3824F7846600851F1D /* Movie.swift */,
 			);
-			path = model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		8103471D24DE666D0070EF47 /* Constants */ = {
+		8103471D24DE666D0070EF47 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Constants;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		8103471E24DE66720070EF47 /* Controlles */ = {
@@ -239,14 +240,15 @@
 			isa = PBXGroup;
 			children = (
 				8133A03524CF5A0600AC2F27 /* AppDelegate.swift */,
-				8103471B24DE64510070EF47 /* model */,
+				8133A04124CF5A1600AC2F27 /* Info.plist */,
+				81A0856124FFDB800086F85C /* Networking */,
+				8103471B24DE64510070EF47 /* Models */,
 				8103471924DE64350070EF47 /* Views */,
 				8103471E24DE66720070EF47 /* Controlles */,
 				81B75F2524E6B06700A8E056 /* Managers */,
-				8103471D24DE666D0070EF47 /* Constants */,
+				8103471D24DE666D0070EF47 /* Utilities */,
 				8103471824DE642D0070EF47 /* Extentions */,
 				8103471A24DE64380070EF47 /* Assets */,
-				8133A04124CF5A1600AC2F27 /* Info.plist */,
 			);
 			path = "first ios project";
 			sourceTree = "<group>";
@@ -268,6 +270,14 @@
 				8133A05724CF5A1700AC2F27 /* Info.plist */,
 			);
 			path = "first ios projectUITests";
+			sourceTree = "<group>";
+		};
+		81A0856124FFDB800086F85C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				81A0856224FFDBC80086F85C /* APIManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		81B75F2524E6B06700A8E056 /* Managers */ = {
@@ -493,6 +503,7 @@
 				8103476C24DF31790070EF47 /* MapVC.swift in Sources */,
 				81151F3624F77F9200851F1D /* MovieCell.swift in Sources */,
 				8133A06424CF9DCD00AC2F27 /* SignUpVC.swift in Sources */,
+				81A0856324FFDBC80086F85C /* APIManager.swift in Sources */,
 				81151F3924F7846600851F1D /* Movie.swift in Sources */,
 				8133A03624CF5A0600AC2F27 /* AppDelegate.swift in Sources */,
 				8133A06A24DB8EA600AC2F27 /* User.swift in Sources */,

@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct Movie {
+struct Movies: Decodable {
     
     var image : String
-    var name : String
-    var type : String
-    var releaseDate : String
+    var title : String
+    var genre : String
+    var releaseYear : Int
+    var rating : Double
 }

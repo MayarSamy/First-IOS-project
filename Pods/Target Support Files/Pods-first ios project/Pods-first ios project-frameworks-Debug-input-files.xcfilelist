@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-first ios project/Pods-first ios project-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework

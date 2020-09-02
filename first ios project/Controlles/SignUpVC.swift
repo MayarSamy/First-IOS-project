@@ -11,24 +11,14 @@ import UIKit
 class SignUpVC: UIViewController {
     
     // MARK: - outlet
-  //  @IBOutlet weak var userNameTextField: UITextField!
-   // @IBOutlet weak var emailTextField: UITextField!
-  //  @IBOutlet weak var phoneNumberTextField: UITextField!
-   // @IBOutlet weak var addressTextField: UITextField!
-   // @IBOutlet weak var passwordTextField: UITextField!
-   // @IBOutlet weak var rePasswordTextField: UITextField!
-    //@IBOutlet weak var imageView: UIImageView!
-    
-    
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
-    
     @IBOutlet weak var addressTextField: UITextField!
+    
     // MARK: -  variabels
     var user : User!
     var gender = Gender.female
