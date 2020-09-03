@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MoviesVC: UIViewController {
 
@@ -94,11 +95,15 @@ extension MoviesVC : UITableViewDataSource, UITableViewDelegate
                 return UITableViewCell()
         }
         
-        let image = UIImage(named: moviesArray[indexPath.row].image)
+        let image = moviesArray[indexPath.row].image
 
         //let image = UIImage(imageLiteralResourceName: moviesArray[indexPath.row].image)
         
-        cell.movieImage.image = image
+        //imageView.sd_setImage(with: URL(string: "http://www.domain.com/path/to/image.jpg"), placeholderImage: UIImage(named: "placeholder.png"))
+
+        cell.movieImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "movie placeholder.png"))
+        
+        //cell.movieImage.image = image
         cell.movieNameLbl.text = moviesArray[indexPath.row].title
         cell.movieTypeLbl.text = moviesArray[indexPath.row].genre[0]
         cell.moviesReleasedLbl.text = String(moviesArray[indexPath.row].releaseYear)
