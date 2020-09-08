@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if userData != nil {
             if isLogged {
-                let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "MoviesVC") as! MoviesVC
+                let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "MediaFinderVC") as! MediaFinderVC
                 let navigationController = UINavigationController(rootViewController: rootVC)
                 window?.rootViewController = navigationController
             } else {

@@ -38,7 +38,7 @@ class LoginVC: UIViewController {
     // MARK: - login
     @IBAction func loginBtnTapped(_ sender: UIButton) {
         if (emailCheck(user : user) && passwordeCheck(user : user)) {
-            let MainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MoviesVC") as! MoviesVC
+            let MainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MediaFinderVC") as! MediaFinderVC
             navigationController?.pushViewController(MainVC, animated: true)
         }
     }
