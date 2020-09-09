@@ -17,4 +17,6 @@ target 'first ios project' do
   pod 'Alamofire', '~> 4.9.1'
   
   pod 'SDWebImage'
+  
+  pod 'SQLite.swift'
 end

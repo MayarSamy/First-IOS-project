@@ -9,12 +9,9 @@
 import UIKit
 
 class MediaCell: UITableViewCell {
-
-
     
     @IBOutlet weak var mediaArtWork: UIImageView!
     @IBOutlet weak var mediaName: UILabel!
- 
     @IBOutlet weak var mediaDescription: UILabel!
     
     override func awakeFromNib() {

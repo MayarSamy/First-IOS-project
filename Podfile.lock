@@ -4,23 +4,29 @@ PODS:
   - SDWebImage (5.9.0):
     - SDWebImage/Core (= 5.9.0)
   - SDWebImage/Core (5.9.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - IQKeyboardManagerSwift
   - SDWebImage
+  - SQLite.swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - IQKeyboardManagerSwift
     - SDWebImage
+    - SQLite.swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 8a9882ceffa1de386346efc663919a3f403f4930
+PODFILE CHECKSUM: 9c204656e46bab4442bc0236a30ff326e704b4a2
 
 COCOAPODS: 1.9.3

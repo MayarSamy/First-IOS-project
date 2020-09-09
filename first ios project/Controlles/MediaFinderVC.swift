@@ -34,7 +34,7 @@ class MediaFinderVC: UIViewController {
         
         
         mediaTable.dataSource = self
-        mediaTable.delegate = self
+        //mediaTable.delegate = self
         searchBar.delegate = self
     }
     
@@ -124,98 +124,4 @@ extension MediaFinderVC : UITableViewDataSource, UITableViewDelegate
         }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
-    
 }
-
-
-
-
-
-/*
- import UIKit
- import SDWebImage
- 
- class MoviesVC: UIViewController {
- 
- //outllets
- @IBOutlet weak var moviesTable: UITableView!
- 
- //variables
- var moviesArray : [Movies] = []
- 
- override func viewDidLoad() {
- super.viewDidLoad()
- 
- UserDefaultManager.shared().isLoggedIn = true
- 
- self.navigationItem.hidesBackButton = true
- self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Profile", style: .plain, target: self, action: #selector(rightHandAction))
- self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(lefttHandAction))
- 
- moviesTable.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
- 
- moviesTable.dataSource = self
- moviesTable.delegate = self
- 
- getData()
- 
- }
- 
- private func getData() {
- 
- APIManager.loadMovies{ (error, movies) in
- if let error = error {
- print(error)
- } else if let movies = movies {
- //print(movies.first?.title)
- self.moviesArray = movies
- self.moviesTable.reloadData()
- 
- }
- }
- }
- 
- 
-
- }
- 
- extension MoviesVC : UITableViewDataSource, UITableViewDelegate
- {
- func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
- return moviesArray.count
- }
- 
- func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- guard let cell = moviesTable.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as? MovieCell
- else{
- return UITableViewCell()
- }
- 
- let image = moviesArray[indexPath.row].image
- 
- //let image = UIImage(imageLiteralResourceName: moviesArray[indexPath.row].image)
- 
- //imageView.sd_setImage(with: URL(string: "http://www.domain.com/path/to/image.jpg"), placeholderImage: UIImage(named: "placeholder.png"))
- 
- cell.movieImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "movie placeholder.png"))
- 
- //cell.movieImage.image = image
- cell.movieNameLbl.text = moviesArray[indexPath.row].title
- cell.movieTypeLbl.text = moviesArray[indexPath.row].genre[0]
- cell.moviesReleasedLbl.text = String(moviesArray[indexPath.row].releaseYear)
- cell.movieRatingLbl.text = String(moviesArray[indexPath.row].rating)
- return cell
- }
- 
- func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
- return 120
- }
- 
- 
- }
-*/
