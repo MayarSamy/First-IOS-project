@@ -18,23 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         IQKeyboardManager.shared.enable = true
+        SQLManager.shared().setupConnection()
 
-        let userData = UserDefaults.standard.object(forKey: "user" )
         let isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn" )
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if userData != nil {
             if isLogged {
                 let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "MediaFinderVC") as! MediaFinderVC
                 let navigationController = UINavigationController(rootViewController: rootVC)
                 window?.rootViewController = navigationController
-            } else {
+            } else if !isLogged{
                 let rootVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                 let navigationController = UINavigationController(rootViewController: rootVC)
                 window?.rootViewController = navigationController
             }
-        }
-        
         return true
     }
 

@@ -19,4 +19,6 @@ target 'first ios project' do
   pod 'SDWebImage'
   
   pod 'SQLite.swift'
+  
+  pod 'UIView+Shake'
 end

@@ -29,32 +29,17 @@ class UserDefaultManager {
         }
     }
     
-    var user : User {
+    
+    var email:String  {
         set {
-            setUserDefaults(newValue)
+            UserDefaults.standard.set(newValue, forKey: "email" )
         }
         get {
-            return getUserDefaults()!
-        }
-    }
-    
-    //set user default
-    private func setUserDefaults(_ user: User) {
-        let encoder = JSONEncoder()
-        if let encodded = try? encoder.encode(user) {
-            UserDefaults.standard.set(encodded, forKey: "user")
-        }
-    }
-    
-    //get user defaults
-    private func getUserDefaults() -> User? {
-        if let savedUser =  UserDefaults.standard.object(forKey: "user") as? Data {
-            let decoder = JSONDecoder()
-            if let loadedUser = try? decoder.decode(User.self, from: savedUser) {
-                return loadedUser
+            guard UserDefaults.standard.object(forKey: "email" ) != nil else {
+                return ""
             }
+            return UserDefaults.standard.string(forKey: "email")!
         }
-        return nil
     }
  }
 

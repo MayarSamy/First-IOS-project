@@ -20,7 +20,6 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     
     // MARK: -  variabels
-    var user : User!
     var gender = Gender.female
     let imagePicker = UIImagePickerController()
     
@@ -49,7 +48,6 @@ class SignUpVC: UIViewController {
     }
     
     //gender switch
-    
     @IBAction func genderSwitchChanged(_ sender: UISwitch) {
         if sender.isOn {
             gender = .female
@@ -64,10 +62,11 @@ class SignUpVC: UIViewController {
         if (dataEntered())
         {
             if(isValidData()) {
-                user = User(image: CodableImage(withImage: imageView.image!), name: userNameTextField.text, email: emailTextField.text, phone: phoneNumberTextField.text, address: addressTextField.text, password: passwordTextField.text, gender: gender)
+                SQLManager.shared().createUsersTable()
+
+                SQLManager.shared().insertUser(name: userNameTextField.text!, email: emailTextField.text!, phone: phoneNumberTextField.text!, address: addressTextField.text!, password: passwordTextField.text!, gender: gender.rawValue)
+                UserDefaultManager.shared().email = emailTextField.text!
                 
-                //setUserDefaults(user: user)
-                UserDefaultManager.shared().user = user
                 let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                 navigationController?.pushViewController(loginVC, animated: true)
             }
@@ -180,15 +179,6 @@ class SignUpVC: UIViewController {
         let passwordPred = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return passwordPred.evaluate(with: password)
     }
-    
-    
-    //set user default
-//    func setUserDefaults(user: User) {
-//        let encoder = JSONEncoder()
-//        if let encodded = try? encoder.encode(user) {
-//            UserDefaults.standard.set(encodded, forKey: "user")
-//        }
-//    }
 }
 
 
@@ -207,20 +197,11 @@ extension SignUpVC: UIImagePickerControllerDelegate & UINavigationControllerDele
     }
 }
 
-func setUserDefaults(user: User) {
-    let encoder = JSONEncoder()
-    if let encodded = try? encoder.encode(user) {
-        UserDefaults.standard.set(encodded, forKey: "user")
-    }
-}
-
 extension SignUpVC : SetAddressDelegate
 {
     func setAddress(_ address: String) {
         addressTextField.text = address
     }
-    
-    
 }
 
 

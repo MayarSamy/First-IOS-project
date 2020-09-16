@@ -26,8 +26,6 @@ class MapVC: UIViewController {
     var previousLocation : CLLocation?
     let geoCoder = CLGeocoder()
     weak var delegate : SetAddressDelegate?
-  //  var currentCoordinate = CLLocationCoordinate2D()
-   // let location = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,9 +124,6 @@ extension MapVC : MKMapViewDelegate
 {
     private func getNameOfLocation(lat:CLLocationDegrees,long:CLLocationDegrees) {
         let center = getCenterLocation(for: mapView)
-        
-        // let location = CLLocation(latitude: lat, longitude: long)
-        
         // Geocode Location
         geoCoder.reverseGeocodeLocation(center) { (placemarks, error) in
             // Process Response
@@ -151,27 +146,6 @@ extension MapVC : MKMapViewDelegate
                 addressLbl.text =  "\(country) , \(city) , \(street)"
             }
         }
-   //func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-   // getNameOfLocation(lat: mapView.centerCoordinate.latitude, long: mapView.centerCoordinate.longitude)
-        /*let center = getCenterLocation(for: mapView)
-        guard previousLocation == self.previousLocation else { return }
-        guard center.distance(from: previousLocation!) > 50 else {return}
-        previousLocation = center
-        geoCoder.reverseGeocodeLocation(center, completionHandler: {[weak self] (placeMarks, error) in
-            guard let self = self else {return}
-            if let _ = error {
-                print("error")
-            }
-            guard let placeMark = placeMarks?.first else {return}
-            let streetNumber = placeMark.subThoroughfare ?? "streetNumber"
-            let country = placeMark.country ?? "country"
-            DispatchQueue.main.sync {
-                self.addressLbl.text = "\(streetNumber) \(country)"
-            }
-        })
-    }*/
-    
-   
     }
 }
-//}
+

@@ -7,12 +7,14 @@ PODS:
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
+  - "UIView+Shake (1.4.0)"
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - IQKeyboardManagerSwift
   - SDWebImage
   - SQLite.swift
+  - "UIView+Shake"
 
 SPEC REPOS:
   trunk:
@@ -20,13 +22,15 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - SDWebImage
     - SQLite.swift
+    - "UIView+Shake"
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  "UIView+Shake": 055ad67721de1f74d29c0a1d464697e505dfc62f
 
-PODFILE CHECKSUM: 9c204656e46bab4442bc0236a30ff326e704b4a2
+PODFILE CHECKSUM: 2cbe11729df610eaa2bf9be227125654c16bde45
 
 COCOAPODS: 1.9.3

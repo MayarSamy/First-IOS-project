@@ -20,5 +20,20 @@ struct Media : Decodable {
     var trackName : String?
     var longDescription : String?
     var previewUrl : String
-    //var kind : String?
+    var kind : String?
+    
+    func getType() -> MediaType {
+        switch self.kind {
+        case "song":
+            return MediaType.music
+        case "tv-episode":
+            return MediaType.tvShow
+        case "feature-movie":
+            return MediaType.movie
+        default:
+            return MediaType.music
+        }
+    }
 }
+
+

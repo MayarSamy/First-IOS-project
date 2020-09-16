@@ -22,32 +22,44 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EVk-HZ-rbe">
                         <rect key="frame" x="0.0" y="0.0" width="283" height="144"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-em-YwY">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-em-YwY">
                         <rect key="frame" x="291" y="11" width="188" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
+                        <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="descriotion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-rX-osc">
-                        <rect key="frame" x="291" y="48" width="188" height="21"/>
+                        <rect key="frame" x="291" y="34.5" width="188" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZ8-Uz-8Pc">
+                        <rect key="frame" x="0.0" y="0.0" width="283" height="144"/>
+                        <connections>
+                            <action selector="artWorkBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WSL-QX-arR"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="dZ8-Uz-8Pc" firstAttribute="height" secondItem="EVk-HZ-rbe" secondAttribute="height" id="3CQ-dZ-eJp"/>
                     <constraint firstItem="xpX-em-YwY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="7z8-dt-K03"/>
+                    <constraint firstItem="dZ8-Uz-8Pc" firstAttribute="width" secondItem="EVk-HZ-rbe" secondAttribute="width" id="HZi-vM-FM0"/>
                     <constraint firstAttribute="trailing" secondItem="xpX-em-YwY" secondAttribute="trailing" constant="10" id="I5l-3K-NKO"/>
                     <constraint firstAttribute="trailing" secondItem="W7n-rX-osc" secondAttribute="trailing" constant="10" id="MWd-H3-BNH"/>
                     <constraint firstItem="EVk-HZ-rbe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Xf9-Aj-3O7"/>
-                    <constraint firstAttribute="bottom" secondItem="W7n-rX-osc" secondAttribute="bottom" constant="75.5" id="aQF-In-e1L"/>
+                    <constraint firstAttribute="bottom" secondItem="W7n-rX-osc" secondAttribute="bottom" constant="89.5" id="aQF-In-e1L"/>
+                    <constraint firstItem="dZ8-Uz-8Pc" firstAttribute="bottom" secondItem="EVk-HZ-rbe" secondAttribute="bottom" id="cUc-Oe-50P"/>
                     <constraint firstItem="W7n-rX-osc" firstAttribute="leading" secondItem="EVk-HZ-rbe" secondAttribute="trailing" constant="8" id="ejy-MI-W89"/>
+                    <constraint firstItem="dZ8-Uz-8Pc" firstAttribute="trailing" secondItem="EVk-HZ-rbe" secondAttribute="trailing" id="iRj-1I-cia"/>
                     <constraint firstItem="W7n-rX-osc" firstAttribute="width" secondItem="xpX-em-YwY" secondAttribute="width" id="len-AA-iSS"/>
                     <constraint firstItem="xpX-em-YwY" firstAttribute="leading" secondItem="EVk-HZ-rbe" secondAttribute="trailing" constant="8" id="nHB-AO-tlr"/>
                     <constraint firstItem="EVk-HZ-rbe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oYc-Zy-lHT"/>
+                    <constraint firstItem="dZ8-Uz-8Pc" firstAttribute="top" secondItem="EVk-HZ-rbe" secondAttribute="top" id="pmx-aB-h80"/>
+                    <constraint firstItem="dZ8-Uz-8Pc" firstAttribute="leading" secondItem="EVk-HZ-rbe" secondAttribute="leading" id="rG8-ri-sev"/>
                     <constraint firstAttribute="bottom" secondItem="EVk-HZ-rbe" secondAttribute="bottom" constant="0.5" id="ugm-lB-Td8"/>
                     <constraint firstAttribute="trailing" secondItem="EVk-HZ-rbe" secondAttribute="trailing" constant="206" id="xUl-Ie-h0w"/>
-                    <constraint firstItem="W7n-rX-osc" firstAttribute="top" secondItem="xpX-em-YwY" secondAttribute="bottom" constant="16.5" id="zeZ-h3-2dW"/>
+                    <constraint firstItem="W7n-rX-osc" firstAttribute="top" secondItem="xpX-em-YwY" secondAttribute="bottom" constant="2.5" id="zeZ-h3-2dW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

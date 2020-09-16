@@ -14,7 +14,7 @@ enum Gender : String, Codable{
 }
 
 struct User : Codable {
-    var image : CodableImage!
+    //var image : CodableImage!
     var name : String!
     var email : String!
     var phone : String!

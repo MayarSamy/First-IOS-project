@@ -15,7 +15,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     //variables
-    var user : User!
+    var user: User = User()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,20 +26,17 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-
-         //user = getUserDefaults()
-        user = UserDefaultManager.shared().user
-        UserDefaultManager.shared().isLoggedIn = false
-
-        //print(user.email)
-        //UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        
+       let email = UserDefaultManager.shared().email
+        user = SQLManager.shared().retriveUserData(userMail: email)
+       UserDefaultManager.shared().isLoggedIn = false
     }
     
     // MARK: - login
     @IBAction func loginBtnTapped(_ sender: UIButton) {
-        if (emailCheck(user : user) && passwordeCheck(user : user)) {
-            let MainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MediaFinderVC") as! MediaFinderVC
-            navigationController?.pushViewController(MainVC, animated: true)
+            if (emailCheck(user : user) && passwordeCheck(user : user)) {
+                let MainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MediaFinderVC") as! MediaFinderVC
+                navigationController?.pushViewController(MainVC, animated: true)
         }
     }
     
@@ -56,33 +53,22 @@ class LoginVC: UIViewController {
             let alert = UIAlertController(title: "ERROR", message: "Enter valid email", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
+
             return false
         }
         return true
     }
-    
-    // MARK: - password
+//
+//    // MARK: - password
     func passwordeCheck(user : User) -> Bool {
         guard let password = passwordTextField.text , password.count > 0 , passwordTextField.text == user.password
             else {
                 let alert = UIAlertController(title: "ERROR", message: "Password not correct", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                
+
                 return false
         }
         return true
     }
-
-    //recieve user data
-//    func getUserDefaults() -> User? {
-//        if let savedUser =  UserDefaults.standard.object(forKey: "user") as? Data {
-//            let decoder = JSONDecoder()
-//            if let loadedUser = try? decoder.decode(User.self, from: savedUser) {
-//                return loadedUser
-//            }
-//        }
-//        return nil
-//    }
 }
