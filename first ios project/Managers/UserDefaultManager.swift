@@ -41,5 +41,17 @@ class UserDefaultManager {
             return UserDefaults.standard.string(forKey: "email")!
         }
     }
+    
+    var mediaType: MediaType {
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: "MediaType")
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: "MediaType") != nil else {
+                return MediaType.movie
+            }
+            return UserDefaults.standard.string(forKey: "MediaType").map { MediaType(rawValue: $0)! }!
+        }
+    }
  }
 

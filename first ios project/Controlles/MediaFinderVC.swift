@@ -15,10 +15,11 @@ class MediaFinderVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchResult: UITableView!
     @IBOutlet weak var mediaTable: UITableView!
+    @IBOutlet weak var segment: UISegmentedControl!
     
     var mediaArray : [Media] = []
-    var mediaType = MediaType.movie
-    var criteria : String?
+    var mediaType = UserDefaultManager.shared().mediaType
+    var criteria : String = ""
     let email = UserDefaultManager.shared().email
     
     var playerVC = AVPlayerViewController()
@@ -39,20 +40,36 @@ class MediaFinderVC: UIViewController {
         mediaTable.dataSource = self
         mediaTable.delegate = self
         searchBar.delegate = self
+        
+        setupSegment()
     }
     
     @IBAction func mediaTypeChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             mediaType = .movie
+            UserDefaultManager.shared().mediaType = .movie
             getMedia()
         }
         else if sender.selectedSegmentIndex == 1 {
             mediaType = .music
+            UserDefaultManager.shared().mediaType = .music
             getMedia()
         }
         else {
             mediaType = .tvShow
+            UserDefaultManager.shared().mediaType = .tvShow
             getMedia()
+        }
+    }
+    
+    private func setupSegment(){
+        switch mediaType {
+        case .movie:
+            segment.selectedSegmentIndex = 0
+        case .music:
+            segment.selectedSegmentIndex = 1
+        case .tvShow:
+            segment.selectedSegmentIndex = 2
         }
     }
     
@@ -67,7 +84,7 @@ class MediaFinderVC: UIViewController {
     private func getMedia() {
         SQLManager.shared().createSearchedTable()
         SQLManager.shared().droppingSearchedMedia(userMail: email)
-        APIManager.loadMedia(mediaType: mediaType.rawValue, criteria: criteria! ) { (error , media) in
+        APIManager.loadMedia(mediaType: mediaType.rawValue, criteria: criteria ) { (error , media) in
             if let error = error {
                 print(error)
             }
@@ -79,7 +96,7 @@ class MediaFinderVC: UIViewController {
                     let artistName = medias.artistName
                     let trackName = medias.trackName
                     
-                    if medias.kind != "feature-movie" {
+                    if medias.kind == "song" {
                         SQLManager.shared().insertMedia(userEmail: self.email, artworkUrl: artWork, artistName: artistName!, trackName: trackName, longDescription: nil, previewUrl: previewUrl, kind: medias.kind!)
                     } else {
                         let longDescription = medias.longDescription

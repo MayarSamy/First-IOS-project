@@ -109,24 +109,12 @@ class SQLManager {
     //inset searched media
     func insertMedia(userEmail: String, artworkUrl: String, artistName: String, trackName: String?, longDescription: String?, previewUrl: String, kind: String) {
         
-        if longDescription != nil
-        {
-            let media = self.searchedTable.insert(self.userEmail <- userEmail, self.artworkUrl <- artworkUrl, self.artistName <- artistName, self.longDescription <- longDescription, self.previewUrl <- previewUrl, self.kind <- kind)
-            do {
-                try self.database.run(media)
-                print("data entered")
-            } catch {
-                print(error)
-            }
-        }
-        else {
-            let media = self.searchedTable.insert(self.userEmail <- userEmail, self.artworkUrl <- artworkUrl, self.artistName <- artistName, self.trackName <- trackName, self.previewUrl <- previewUrl, self.kind <- kind)
-            do {
-                try self.database.run(media)
-                print("data entered")
-            } catch {
-                print(error)
-            }
+        let media = self.searchedTable.insert(self.userEmail <- userEmail, self.artworkUrl <- artworkUrl, self.artistName <- artistName, self.longDescription <- longDescription, self.previewUrl <- previewUrl, self.kind <- kind, self.trackName <- trackName)
+        do {
+            try self.database.run(media)
+            print("data entered")
+        } catch {
+            print(error)
         }
     }
     

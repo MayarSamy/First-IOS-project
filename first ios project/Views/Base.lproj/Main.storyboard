@@ -182,6 +182,7 @@
                         <outlet property="mediaTable" destination="d53-ZH-i0b" id="GbT-qD-mrB"/>
                         <outlet property="searchBar" destination="kXr-AG-Ssc" id="Tms-Hg-iOt"/>
                         <outlet property="searchResult" destination="d53-ZH-i0b" id="7IO-ao-UBK"/>
+                        <outlet property="segment" destination="dLi-3y-IO0" id="UK1-kW-poq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOe-jp-7EX" userLabel="First Responder" sceneMemberID="firstResponder"/>
