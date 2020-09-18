@@ -14,7 +14,7 @@ enum Gender : String, Codable{
 }
 
 struct User : Codable {
-    //var image : CodableImage!
+    var image : Data!
     var name : String!
     var email : String!
     var phone : String!
@@ -26,12 +26,13 @@ struct User : Codable {
 struct CodableImage : Codable {
     let imageData : Data?
     
-    init(withImage image: UIImage) {
-        self.imageData = image.jpegData(compressionQuality: 1.0)
+    static func setImage(image: UIImage) -> Data? {
+        let data = image.jpegData(compressionQuality: 1.0)
+        return data
     }
     
-    func getImage() -> UIImage? {
-        guard let imageData = self.imageData else {
+    static func getImage(imageData: Data?) -> UIImage? {
+        guard let imageData = imageData else {
             return nil
         }
         let image = UIImage(data: imageData)

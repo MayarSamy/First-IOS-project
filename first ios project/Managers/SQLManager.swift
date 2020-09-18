@@ -30,7 +30,7 @@ class SQLManager {
     let address = Expression<String>("userAddress")
     let password = Expression<String>("userPassword")
     let gender = Expression<String>("userGender")
-    //let image = Expression<String>("userImage")
+    let image = Expression<Data>("userImage")
 
     //media searched table columns
     let userEmail = Expression<String>("userEmail")
@@ -63,7 +63,7 @@ class SQLManager {
             table.column(self.address)
             table.column(self.password)
             table.column(self.gender)
-            //table.column(self.image)
+            table.column(self.image)
         }
         do {
             try self.database.run(createUsersTable)
@@ -95,18 +95,18 @@ class SQLManager {
     }
     
     //insert user data
-    func insertUser(name: String, email: String, phone: String, address: String, password: String, gender: String/*, image: String*/) {
-        let user = self.usersTable.insert(self.name <- name, self.email <- email, self.phone <- phone, self.address <- address, self.password <- password, self.gender <- gender/*, self.image <- image*/)
-
+    func insertUser(userData: User) {
+        let insertedUser = self.usersTable.insert(self.name <- userData.name, self.email <- userData.email, self.phone <- userData.phone, self.address <- userData.address, self.password <- userData.password, self.gender <- (userData.gender)!.rawValue, self.image <- userData.image)
+        
         do {
-            try self.database.run(user)
+            try self.database.run(insertedUser)
             print("user data entered")
         } catch {
             print(error)
         }
     }
     
-    //inset searched media
+    //insert searched media
     func insertMedia(userEmail: String, artworkUrl: String, artistName: String, trackName: String?, longDescription: String?, previewUrl: String, kind: String) {
         
         let media = self.searchedTable.insert(self.userEmail <- userEmail, self.artworkUrl <- artworkUrl, self.artistName <- artistName, self.longDescription <- longDescription, self.previewUrl <- previewUrl, self.kind <- kind, self.trackName <- trackName)
@@ -124,9 +124,8 @@ class SQLManager {
         do {
             let users = try self.database.prepare(self.usersTable.filter(email == userMail))
             for user in users {
-                usersData = User(name: user[self.name], email: user[self.email], phone: user[self.phone], address: user[self.address], password: user[self.password], gender: Gender(rawValue: user[self.gender]))
-            }
-
+                usersData = User(image: user[self.image], name: user[self.name], email: user[self.email], phone: user[self.phone], address: user[self.address], password: user[self.password], gender: Gender(rawValue: user[self.gender]))
+                }
             } catch {
             print(error)
         }

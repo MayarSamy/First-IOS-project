@@ -32,7 +32,9 @@ class ProfileVC: UIViewController {
         
         let email = UserDefaultManager.shared().email
         user = SQLManager.shared().retriveUserData(userMail: email)
-//        userImage.image = user.image.getImage()
+        //userImage.image = user.image.getImage()
+        let image = CodableImage.getImage(imageData: user.image)
+        userImage.image = image
         nameLbl.text = user.name
         emailLbl.text = user.email
         phoneLbl.text = user.phone

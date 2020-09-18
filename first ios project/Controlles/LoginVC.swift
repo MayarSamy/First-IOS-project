@@ -29,6 +29,7 @@ class LoginVC: UIViewController {
         
        let email = UserDefaultManager.shared().email
         user = SQLManager.shared().retriveUserData(userMail: email)
+        
        UserDefaultManager.shared().isLoggedIn = false
     }
     

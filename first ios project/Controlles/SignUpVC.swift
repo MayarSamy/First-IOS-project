@@ -63,8 +63,10 @@ class SignUpVC: UIViewController {
         {
             if(isValidData()) {
                 SQLManager.shared().createUsersTable()
-
-                SQLManager.shared().insertUser(name: userNameTextField.text!, email: emailTextField.text!, phone: phoneNumberTextField.text!, address: addressTextField.text!, password: passwordTextField.text!, gender: gender.rawValue)
+                let image = CodableImage.setImage(image: imageView.image!) //UserDefaultManager.shared().setImage(imageView!.image)
+                let user = User(image: image, name: userNameTextField.text!, email: emailTextField.text!, phone: phoneNumberTextField.text!, address: addressTextField.text!, password: passwordTextField.text!, gender: Gender(rawValue: gender.rawValue))
+//              SQLManager.shared().insertUser(name: userNameTextField.text!, email: emailTextField.text!, phone: phoneNumberTextField.text!, address: addressTextField.text!, password: passwordTextField.text!, gender: gender.rawValue)
+                SQLManager.shared().insertUser(userData: user)
                 UserDefaultManager.shared().email = emailTextField.text!
                 
                 let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC

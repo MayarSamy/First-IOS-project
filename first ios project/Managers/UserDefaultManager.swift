@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UserDefaultManager {
     private init() {}
@@ -53,5 +54,33 @@ class UserDefaultManager {
             return UserDefaults.standard.string(forKey: "MediaType").map { MediaType(rawValue: $0)! }!
         }
     }
+    
+//        var user : User {
+//            set {
+//                setUserDefaults(newValue)
+//            }
+//            get {
+//                return getUserDefaults(ne)
+//            }
+//        }
+    
+//    set user default
+//         func setImage(_ user: UIImage) -> Data{
+//            let encoder = JSONEncoder()
+//            var encocdedUser : Data = Data()
+//            if let encodded = try? encoder.encode(user){
+//                encocdedUser = encodded
+//            }
+//            return encocdedUser
+//        }
+//    
+////    get user defaults
+//     func getImage(_ user: Data) -> User? {
+//                let decoder = JSONDecoder()
+//                if let loadedUser = try? decoder.decode(User.self, from: user) {
+//                    return loadedUser
+//                }
+//            return nil
+//        }
  }
 
